@@ -25,7 +25,7 @@ const Registration = () => {
                 <input className='w-[368px] py-[26px] px-8 border border-[#11175D] rounded-md mt-2 text-xl placehoder:text-xl ' id='password' type="text"  placeholder='..............'/>
             </label>
             <br />
-            <button className='w-[368px] text-xl text-white font-nuni font-bold py-5 bg-[#5F35F5] rounded-[86px] mt-[51px] mb-[31px]' >Sign up</button>
+            <button  className='w-[368px] text-xl text-white font-nuni font-bold py-5 bg-[#5F35F5] rounded-[86px] mt-[51px] mb-[31px]' >Sign up</button>
             <p className='w-[368px] text-center text-black text-base font-nuni font-normal'>Already  have an account ? <Link to='/login'><span className='text-[#EA6C00] cursor-pointer'>Sign In</span></Link></p>
            </div>
         </Flex>
