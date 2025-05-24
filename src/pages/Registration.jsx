@@ -3,6 +3,7 @@ import Flex from '../components/Flex'
 import Image from '../components/Image'
 import RegistrationImage from '../assets/registration.png'
 import { Link } from 'react-router-dom'
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Registration = () => {
   let [email,setEmail]=useState("")
@@ -12,6 +13,7 @@ const Registration = () => {
   let [emailerror,setEmailError]=useState("")
   let [nameerror,setNameError]=useState("")
   let [passwordrror,setPasswordError]=useState("")
+  let [eye,setEye]=useState(false)
   let  handleEmail=(e)=>{
     setEmail(e.target.value)
     setEmailError("")
@@ -78,8 +80,11 @@ const Registration = () => {
               nameerror && <p className='text-white bg-red-500 w-[368px] py-3 px-3 rounded-md mt-3 '>{nameerror}</p>
             }
             <br />
-            <label className='text-sm text-[#11175D] font-numi font-semibold pl-8' htmlFor="password">Password <br />
-                <input onChange={handlePassword} className='w-[368px] py-[26px] px-8 border border-[#11175D] rounded-md mt-2 text-xl placehoder:text-xl ' id='password' type="text"  placeholder='..............'/>
+            <label className=' text-sm text-[#11175D] font-numi font-semibold pl-8' htmlFor="password">Password <br />
+                <div className='relative w-[368px]'>
+                  <input onChange={handlePassword} className='w-[368px] py-[26px] px-8 border border-[#11175D] rounded-md mt-2 text-xl placehoder:text-xl ' id='password' type={eye?"text":"password"}  placeholder='..............'/>
+                <div onClick={()=>setEye(!eye)} className='absolute top-1/2 right-3 -translate-y-1/2'>{eye ?<FiEye  />:<FiEyeOff />}</div>
+                </div>
             </label>
              {
               passwordrror && <p className='text-white bg-red-500 w-[368px] py-3 px-3 rounded-md mt-3 '>{passwordrror}</p>
